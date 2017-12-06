@@ -19,7 +19,17 @@ namespace GarageApp_MVC.Controllers
         // GET: ParkedVehicles
         public ActionResult Index()
         {
+            //    List<ParkedVehicle> vehis = new List<ParkedVehicle>();
+            //    foreach(var vehis1 in db.Vehicles)
+            //    {
+            //        vehis.Add(new ParkedVehicle(vehis1));
+            //    }
+
+            //    var vehicas = vehis.Where(x => x.RegNum == (Convert.ToInt32(search)));
+            //    return View(vehicas);
             return View(db.Vehicles.ToList());
+
+
         }
 
 

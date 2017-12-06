@@ -21,6 +21,7 @@ namespace GarageApp_MVC.Models
         public int NoOfWheels { get; set; }
         public int SeatCapacity { get; set; }
         public DateTime ParkingTime { get; set; }
+        public string Search { get; set; }
 
 
         public ParkedVehicle()
