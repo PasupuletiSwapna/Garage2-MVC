@@ -22,12 +22,14 @@ namespace GarageApp_MVC.Controllers
             return View(db.Vehicles.ToList());
         }
 
-        public ActionResult OView()
+
+
+        public ActionResult Overview()
         {
-            List < Overview > model= new List<Overview>();
-            foreach(var vehical in db.Vehicles)
+            List<Overview> model= new List<Overview>();
+            foreach(var vehicle in db.Vehicles)
             {
-                model.Add(new Overview(vehical));
+                model.Add(new Overview(vehicle));
 
             }
 

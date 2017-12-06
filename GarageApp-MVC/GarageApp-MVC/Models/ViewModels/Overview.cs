@@ -18,8 +18,8 @@ namespace GarageApp_MVC.Models.ViewModels
         public Overview(ParkedVehicle pvehicle)
         {
             RegNum = pvehicle.RegNum;
-            VehicleType = pvehicle.VehicleType;
-           
+            VehicleType = pvehicle.VehicleType.ToString();
+          
             Color = pvehicle.Color;
             ParkingTime = pvehicle.ParkingTime;
 

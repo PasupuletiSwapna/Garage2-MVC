@@ -5,7 +5,7 @@ namespace GarageApp_MVC.Migrations
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
-
+   
     internal sealed class Configuration : DbMigrationsConfiguration<GarageApp_MVC.DataAccessLayer.RegisterContext>
     {
         public Configuration()
@@ -24,7 +24,7 @@ namespace GarageApp_MVC.Migrations
                                               new ParkedVehicle()
                                               {
                                                   RegNum = 101,
-                                                  VehicleType = "Car",
+                                                  VehicleType = Models.Type.Car,
                                                   Color = "Blue",
                                                   Brand = "Volksvagen",
                                                   Model = "A20",
@@ -36,7 +36,7 @@ namespace GarageApp_MVC.Migrations
                                                  new ParkedVehicle()
                                                  {
                                                      RegNum = 102,
-                                                     VehicleType = "Car",
+                                                     VehicleType = Models.Type.Car,
                                                      Color = "Red",
                                                      Brand = "BMW",
                                                      Model = "S2017",
@@ -48,7 +48,7 @@ namespace GarageApp_MVC.Migrations
                                                    new ParkedVehicle()
                                                    {
                                                        RegNum = 201,
-                                                       VehicleType = "Auto",
+                                                       VehicleType = Models.Type.Auto,
                                                        Color = "Orange",
                                                        Brand = "Hyonda",
                                                        Model = "Aws01",
@@ -60,7 +60,7 @@ namespace GarageApp_MVC.Migrations
                                                      new ParkedVehicle()
                                                      {
                                                          RegNum = 103,
-                                                         VehicleType = "Car",
+                                                         VehicleType = Models.Type.Truck,
                                                          Color = "White",
                                                          Brand = "Swift",
                                                          Model = "V10",
@@ -73,7 +73,7 @@ namespace GarageApp_MVC.Migrations
                                                        new ParkedVehicle()
                                                        {
                                                            RegNum = 301,
-                                                           VehicleType = "Truck",
+                                                           VehicleType = Models.Type.Car,
                                                            Color = "Yellow",
                                                            Brand = "Toyota",
                                                            Model = "C01",
@@ -85,7 +85,7 @@ namespace GarageApp_MVC.Migrations
                                                          new ParkedVehicle()
                                                          {
                                                              RegNum = 302,
-                                                             VehicleType = "Truck",
+                                                             VehicleType = Models.Type.Truck,
                                                              Color = "Peach",
                                                              Brand = "TVS",
                                                              Model = "D02",
@@ -97,7 +97,7 @@ namespace GarageApp_MVC.Migrations
                                                            new ParkedVehicle()
                                                            {
                                                                RegNum = 401,
-                                                               VehicleType = "Bus",
+                                                               VehicleType = Models.Type.Bus,
                                                                Color = "Brown",
                                                                Brand = "Volvo",
                                                                Model = "AZ",
@@ -109,7 +109,7 @@ namespace GarageApp_MVC.Migrations
                                                             new ParkedVehicle()
                                                             {
                                                                 RegNum = 402,
-                                                                VehicleType = "Bus",
+                                                                VehicleType = Models.Type.Bus,
                                                                 Color = "Light Yellow",
                                                                 Brand = "Hitex",
                                                                 Model = "Q001",
