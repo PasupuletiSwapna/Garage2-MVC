@@ -4,46 +4,74 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Vehicles in a Garage</h2>
+<h2>Sorting</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
- 
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.VehicleType)
+            @Html.ActionLink("VehicleType", "Index", new { sortOrder = "VehicleType" })
+
+
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.RegNum)
+            @Html.ActionLink("RegNum", "Index", new { sortOrder = "RegNum" })
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Color)
+            @Html.ActionLink("Color", "Index", new { sortOrder = "Color" })
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Brand)
+            @Html.ActionLink("Brand", "Index", new { sortOrder = "Brand" })
+        </th>
+
+        <th>
+            @Html.ActionLink("Model", "Index", new { sortOrder = "Model" })
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Model)
+            @Html.ActionLink("NoOfWheels", "Index", new { sortOrder = "NoOfWheels" })
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.NoOfWheels)
+            @Html.ActionLink("SeatCapacity", "Index", new { sortOrder = "SeatCapacity" })
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SeatCapacity)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ParkingTime)
-        </th>
+
+
         <th></th>
     </tr>
 
+    @foreach (var vehical in Model)
+    {
+        <tr>
+            <td>
+                @vehical.VehicleType
+            </td>
+            <td>
+                @vehical.RegNum
+            </td>
+            <td>
+                @vehical.Color
+            </td>
+            <td>
+                @vehical.Brand
+            </td>
+            <td>
+                @vehical.Model
+            </td>
+            <td>
+                @vehical.NoOfWheels
+            </td>
+            <td>
+                @vehical.SeatCapacity
+            </td>
+        </tr>
+
+    }
+</table>
+
+@*<table>
 @foreach (var item in Model) {
     <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.VehicleType)
-        </td>
         <td>
             @Html.DisplayFor(modelItem => item.RegNum)
         </td>
@@ -71,6 +99,6 @@
             @Html.ActionLink("Delete", "Delete", new { id=item.Id })
         </td>
     </tr>
-}
+}*@
 
-</table>
+@*</table>*@

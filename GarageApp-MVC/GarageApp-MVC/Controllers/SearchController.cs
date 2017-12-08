@@ -8,46 +8,34 @@ using System.Web;
 using System.Web.Mvc;
 using GarageApp_MVC.DataAccessLayer;
 using GarageApp_MVC.Models;
-using GarageApp_MVC.Models.ViewModels;
 
 namespace GarageApp_MVC.Controllers
 {
-    public class ParkedVehiclesController : Controller
+    public class SearchController : Controller
     {
         private RegisterContext db = new RegisterContext();
 
-        // GET: ParkedVehicles
-        public ActionResult Index()
+        // GET: Search
+        public ActionResult Index(string SearchStrng, string SearchMod)                                           //search method implemented here
         {
-           
-            return View(db.Vehicles.ToList());
 
-
-        }
-
-
-
-        public ActionResult Overview()
-        {
-            List<Overview> model= new List<Overview>();
-            foreach(var vehicle in db.Vehicles)
+            var vehis = from v in db.Vehicles select v;
+            if (!string.IsNullOrEmpty(SearchStrng))
             {
-                model.Add(new Overview(vehicle));
+                vehis = vehis.Where(s => s.RegNum.Contains(SearchStrng));
 
             }
 
-            return View(model);
-            
+            else if (!string.IsNullOrEmpty(SearchMod))
+            {
+                vehis = vehis.Where(s => s.Model.Contains(SearchMod));
+            }
+
+            return View(vehis);
         }
-        
-        
-        
-        
-        
-        
-        
-        
-        // GET: ParkedVehicles/Details/5
+    
+
+        // GET: Search/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -62,18 +50,18 @@ namespace GarageApp_MVC.Controllers
             return View(parkedVehicle);
         }
 
-        // GET: ParkedVehicles/Create
+        // GET: Search/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: ParkedVehicles/Create
+        // POST: Search/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,VehicleType,RegNum,Color,Brand,Model,NoOfWheels,SeatCapacity,ParkingTime")] ParkedVehicle parkedVehicle)
+        public ActionResult Create([Bind(Include = "Id,VehicleType,RegNum,Color,Brand,Model,NoOfWheels,SeatCapacity,ParkingTime,Search")] ParkedVehicle parkedVehicle)
         {
             if (ModelState.IsValid)
             {
@@ -85,7 +73,7 @@ namespace GarageApp_MVC.Controllers
             return View(parkedVehicle);
         }
 
-        // GET: ParkedVehicles/Edit/5
+        // GET: Search/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -100,12 +88,12 @@ namespace GarageApp_MVC.Controllers
             return View(parkedVehicle);
         }
 
-        // POST: ParkedVehicles/Edit/5
+        // POST: Search/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,VehicleType,RegNum,Color,Brand,Model,NoOfWheels,SeatCapacity,ParkingTime")] ParkedVehicle parkedVehicle)
+        public ActionResult Edit([Bind(Include = "Id,VehicleType,RegNum,Color,Brand,Model,NoOfWheels,SeatCapacity,ParkingTime,Search")] ParkedVehicle parkedVehicle)
         {
             if (ModelState.IsValid)
             {
@@ -116,7 +104,7 @@ namespace GarageApp_MVC.Controllers
             return View(parkedVehicle);
         }
 
-        // GET: ParkedVehicles/Delete/5
+        // GET: Search/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -131,7 +119,7 @@ namespace GarageApp_MVC.Controllers
             return View(parkedVehicle);
         }
 
-        // POST: ParkedVehicles/Delete/5
+        // POST: Search/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

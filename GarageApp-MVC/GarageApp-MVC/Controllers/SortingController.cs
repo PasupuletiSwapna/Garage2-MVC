@@ -8,46 +8,62 @@ using System.Web;
 using System.Web.Mvc;
 using GarageApp_MVC.DataAccessLayer;
 using GarageApp_MVC.Models;
-using GarageApp_MVC.Models.ViewModels;
 
 namespace GarageApp_MVC.Controllers
 {
-    public class ParkedVehiclesController : Controller
+    public class SortingController : Controller
     {
         private RegisterContext db = new RegisterContext();
 
-        // GET: ParkedVehicles
-        public ActionResult Index()
+        // GET: Sorting
+        public ActionResult Index(string sortOrder)
         {
-           
-            return View(db.Vehicles.ToList());
+        
+            List<ParkedVehicle> allvehicles;                                                                                                //here no neeed to create new list,then sorting will work
+          
+            switch (sortOrder)
+                {
+                    case "VehicleType":
+                        allvehicles = db.Vehicles.OrderByDescending(a => a.VehicleType).ToList();
+                        break;
+
+                    case "RegNum":
+                        allvehicles = db.Vehicles.OrderByDescending(a => a.RegNum).ToList(); 
+                        break;
+
+                    case "Color":
+                        allvehicles = db.Vehicles.OrderByDescending(a => a.Color).ToList(); 
+                        break;
+
+                    case "Brand":
+                        allvehicles = db.Vehicles.OrderByDescending(a => a.Brand).ToList(); 
+                        break;
+
+                    case "Model":
+                        allvehicles = db.Vehicles.OrderByDescending(a => a.Model).ToList(); 
+                        break;
+
+                    case "NoOfWheels":
+                        allvehicles = db.Vehicles.OrderByDescending(a => a.NoOfWheels).ToList(); 
+                        break;
+
+                    case "SeatCapacity":
+                        allvehicles = db.Vehicles.OrderByDescending(a => a.SeatCapacity).ToList(); 
+                        break;
+                default:
+                    allvehicles = db.Vehicles.OrderByDescending(a => a.Brand).ToList(); ;
+                    break;
 
 
-        }
 
 
 
-        public ActionResult Overview()
-        {
-            List<Overview> model= new List<Overview>();
-            foreach(var vehicle in db.Vehicles)
-            {
-                model.Add(new Overview(vehicle));
-
+                
             }
-
-            return View(model);
-            
+            return View(allvehicles);
         }
-        
-        
-        
-        
-        
-        
-        
-        
-        // GET: ParkedVehicles/Details/5
+
+        // GET: Sorting/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -62,18 +78,18 @@ namespace GarageApp_MVC.Controllers
             return View(parkedVehicle);
         }
 
-        // GET: ParkedVehicles/Create
+        // GET: Sorting/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: ParkedVehicles/Create
+        // POST: Sorting/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,VehicleType,RegNum,Color,Brand,Model,NoOfWheels,SeatCapacity,ParkingTime")] ParkedVehicle parkedVehicle)
+        public ActionResult Create([Bind(Include = "Id,VehicleType,RegNum,Color,Brand,Model,NoOfWheels,SeatCapacity,ParkingTime,Search")] ParkedVehicle parkedVehicle)
         {
             if (ModelState.IsValid)
             {
@@ -85,7 +101,7 @@ namespace GarageApp_MVC.Controllers
             return View(parkedVehicle);
         }
 
-        // GET: ParkedVehicles/Edit/5
+        // GET: Sorting/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -100,12 +116,12 @@ namespace GarageApp_MVC.Controllers
             return View(parkedVehicle);
         }
 
-        // POST: ParkedVehicles/Edit/5
+        // POST: Sorting/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,VehicleType,RegNum,Color,Brand,Model,NoOfWheels,SeatCapacity,ParkingTime")] ParkedVehicle parkedVehicle)
+        public ActionResult Edit([Bind(Include = "Id,VehicleType,RegNum,Color,Brand,Model,NoOfWheels,SeatCapacity,ParkingTime,Search")] ParkedVehicle parkedVehicle)
         {
             if (ModelState.IsValid)
             {
@@ -116,7 +132,7 @@ namespace GarageApp_MVC.Controllers
             return View(parkedVehicle);
         }
 
-        // GET: ParkedVehicles/Delete/5
+        // GET: Sorting/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -131,7 +147,7 @@ namespace GarageApp_MVC.Controllers
             return View(parkedVehicle);
         }
 
-        // POST: ParkedVehicles/Delete/5
+        // POST: Sorting/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

@@ -13,7 +13,7 @@ namespace GarageApp_MVC.Models
 
         public int Id { get; set; }
         public Type VehicleType { get; set; }
-        public int RegNum { get; set; }
+        public string RegNum { get; set; }
         public string Color { get; set; }
         public string Brand { get; set; }
         public string Model { get; set; }
@@ -21,7 +21,7 @@ namespace GarageApp_MVC.Models
         public int NoOfWheels { get; set; }
         public int SeatCapacity { get; set; }
         public DateTime ParkingTime { get; set; }
-        public string Search { get; set; }
+  
 
 
         public ParkedVehicle()

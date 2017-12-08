@@ -7,7 +7,7 @@ namespace GarageApp_MVC.Models.ViewModels
 {
     public class Overview
     {
-        public int RegNum { get; set; }
+        public string RegNum { get; set; }
         public string VehicleType { get; set; }
         public string Color { get; set; }
         public DateTime ParkingTime { get; set; }
