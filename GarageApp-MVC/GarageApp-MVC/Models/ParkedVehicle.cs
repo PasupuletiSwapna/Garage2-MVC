@@ -17,17 +17,17 @@ namespace GarageApp_MVC.Models
         public string Color { get; set; }
         public string Brand { get; set; }
         public string Model { get; set; }
-        [DisplayName("No. Of Wheels")]
+        [DisplayName("Number Of Wheels")]
         public int NoOfWheels { get; set; }
         public int SeatCapacity { get; set; }
+        [DisplayName("CheckIn")]
         public DateTime ParkingTime { get; set; }
-  
-
+        public DateTime CheckOut { get; set; } 
 
         public ParkedVehicle()
         {
 
-            ParkingTime = DateTime.Now;
+            //ParkingTime = DateTime.Now;
 
         }
         

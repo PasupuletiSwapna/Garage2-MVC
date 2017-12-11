@@ -33,7 +33,7 @@ namespace GarageApp_MVC.Controllers
 
             return View(vehis);
         }
-    
+
 
         // GET: Search/Details/5
         public ActionResult Details(int? id)

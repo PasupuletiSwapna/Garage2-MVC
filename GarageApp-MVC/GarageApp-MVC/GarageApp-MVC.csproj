@@ -136,25 +136,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201712051410171_init.cs" />
-    <Compile Include="Migrations\201712051410171_init.Designer.cs">
-      <DependentUpon>201712051410171_init.cs</DependentUpon>
+    <Compile Include="Migrations\201712111459540_parkedVehicles.cs" />
+    <Compile Include="Migrations\201712111459540_parkedVehicles.Designer.cs">
+      <DependentUpon>201712111459540_parkedVehicles.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201712061229444_overview.cs" />
-    <Compile Include="Migrations\201712061229444_overview.Designer.cs">
-      <DependentUpon>201712061229444_overview.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712061406391_overview2.cs" />
-    <Compile Include="Migrations\201712061406391_overview2.Designer.cs">
-      <DependentUpon>201712061406391_overview2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712080823071_uupd.cs" />
-    <Compile Include="Migrations\201712080823071_uupd.Designer.cs">
-      <DependentUpon>201712080823071_uupd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712081113579_upd1.cs" />
-    <Compile Include="Migrations\201712081113579_upd1.Designer.cs">
-      <DependentUpon>201712081113579_upd1.cs</DependentUpon>
+    <Compile Include="Migrations\201712111548427_searchj.cs" />
+    <Compile Include="Migrations\201712111548427_searchj.Designer.cs">
+      <DependentUpon>201712111548427_searchj.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ParkedVehicle.cs" />
@@ -169,6 +157,11 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\autos.jpg" />
+    <Content Include="Images\empty.jpg" />
+    <Content Include="Images\lightcolor.jpg" />
+    <Content Include="Images\Parking1.jpg" />
+    <Content Include="Images\traingle.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -203,12 +196,9 @@
     <Content Include="Views\ParkedVehicles\Edit.cshtml" />
     <Content Include="Views\ParkedVehicles\Index.cshtml" />
     <Content Include="Views\ParkedVehicles\Overview.cshtml" />
-    <Content Include="Views\Search\Create.cshtml" />
-    <Content Include="Views\Search\Delete.cshtml" />
-    <Content Include="Views\Search\Details.cshtml" />
-    <Content Include="Views\Search\Edit.cshtml" />
-    <Content Include="Views\Search\Index.cshtml" />
     <Content Include="Views\Sorting\Index.cshtml" />
+    <Content Include="Views\ParkedVehicles\DeleteConfirmed.cshtml" />
+    <Content Include="Views\Search\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -222,20 +212,11 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201712051410171_init.resx">
-      <DependentUpon>201712051410171_init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201712111459540_parkedVehicles.resx">
+      <DependentUpon>201712111459540_parkedVehicles.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712061229444_overview.resx">
-      <DependentUpon>201712061229444_overview.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712061406391_overview2.resx">
-      <DependentUpon>201712061406391_overview2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712080823071_uupd.resx">
-      <DependentUpon>201712080823071_uupd.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712081113579_upd1.resx">
-      <DependentUpon>201712081113579_upd1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201712111548427_searchj.resx">
+      <DependentUpon>201712111548427_searchj.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

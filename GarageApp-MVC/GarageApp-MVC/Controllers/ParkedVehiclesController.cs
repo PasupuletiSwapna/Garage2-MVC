@@ -25,8 +25,6 @@ namespace GarageApp_MVC.Controllers
 
         }
 
-
-
         public ActionResult Overview()
         {
             List<Overview> model= new List<Overview>();
@@ -39,13 +37,22 @@ namespace GarageApp_MVC.Controllers
             return View(model);
             
         }
-        
-        
-        
-        
-        
-        
-        
+
+
+
+        public ActionResult PrintReceiptView(int id)
+        {
+            ParkedVehicle pv = db.Vehicles.Find(id);
+            PrintReceiptView model = new PrintReceiptView(pv);
+            model.CheckOut = DateTime.Now;
+            model.TotalTime = (model.CheckOut - pv.ParkingTime);
+            
+
+
+
+            return View();
+        }
+
         
         // GET: ParkedVehicles/Details/5
         public ActionResult Details(int? id)
@@ -126,20 +133,27 @@ namespace GarageApp_MVC.Controllers
             ParkedVehicle parkedVehicle = db.Vehicles.Find(id);
             if (parkedVehicle == null)
             {
-                return HttpNotFound();
+                ViewBag.Id = id;
+                return View("Already CheckedOut!..");
             }
             return View(parkedVehicle);
         }
+
 
         // POST: ParkedVehicles/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
+          
             ParkedVehicle parkedVehicle = db.Vehicles.Find(id);
+            PrintReceiptView prView = new PrintReceiptView(parkedVehicle);
+        
             db.Vehicles.Remove(parkedVehicle);
             db.SaveChanges();
-            return RedirectToAction("Index");
+          return View("DeleteConfirmed",prView);
+          
+
         }
 
         protected override void Dispose(bool disposing)

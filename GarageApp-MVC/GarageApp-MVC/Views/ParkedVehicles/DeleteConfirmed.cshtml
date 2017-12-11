@@ -1,0 +1,58 @@
+﻿@model GarageApp_MVC.Models.ViewModels.PrintReceiptView
+
+@{
+    ViewBag.Title = "DeleteConfirmed";
+}
+
+<h2>DeleteConfirmed</h2>
+
+<div>
+    <h4>PrintReceiptView</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RegNum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RegNum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VehicleType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VehicleType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ParkingTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ParkingTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CheckOut)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CheckOut)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalTime)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

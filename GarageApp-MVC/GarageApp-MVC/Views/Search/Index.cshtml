@@ -22,71 +22,69 @@
             <input type="submit" value="Search">
         </div>
     }
-    </p>
-    <br />
-    <table class="table">
+</p>
+<br />
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.VehicleType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RegNum)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Color)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Brand)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Model)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NoOfWheels)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SeatCapacity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ParkingTime)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.VehicleType)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.RegNum)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Color)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Brand)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Model)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NoOfWheels)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.SeatCapacity)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ParkingTime)
-            </th>
-                    </tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.VehicleType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RegNum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Color)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Brand)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Model)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NoOfWheels)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SeatCapacity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ParkingTime)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "../ParkedVehicles/Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "../ParkedVehicles/Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "../ParkedVehicles/Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
 
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VehicleType)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.RegNum)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Color)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Brand)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Model)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.NoOfWheels)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.SeatCapacity)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ParkingTime)
-                </td>
-              
-              
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-                </td>
-            </tr>
-        }
-
-    </table>
+</table>
