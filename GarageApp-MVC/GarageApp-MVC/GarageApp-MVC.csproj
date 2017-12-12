@@ -136,13 +136,21 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201712111459540_parkedVehicles.cs" />
-    <Compile Include="Migrations\201712111459540_parkedVehicles.Designer.cs">
-      <DependentUpon>201712111459540_parkedVehicles.cs</DependentUpon>
+    <Compile Include="Migrations\201712120906049_sort.cs" />
+    <Compile Include="Migrations\201712120906049_sort.Designer.cs">
+      <DependentUpon>201712120906049_sort.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201712111548427_searchj.cs" />
-    <Compile Include="Migrations\201712111548427_searchj.Designer.cs">
-      <DependentUpon>201712111548427_searchj.cs</DependentUpon>
+    <Compile Include="Migrations\201712120947249_prntrcpt.cs" />
+    <Compile Include="Migrations\201712120947249_prntrcpt.Designer.cs">
+      <DependentUpon>201712120947249_prntrcpt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712121002341_prn.cs" />
+    <Compile Include="Migrations\201712121002341_prn.Designer.cs">
+      <DependentUpon>201712121002341_prn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712121010051_prntrp.cs" />
+    <Compile Include="Migrations\201712121010051_prntrp.Designer.cs">
+      <DependentUpon>201712121010051_prntrp.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ParkedVehicle.cs" />
@@ -197,8 +205,8 @@
     <Content Include="Views\ParkedVehicles\Index.cshtml" />
     <Content Include="Views\ParkedVehicles\Overview.cshtml" />
     <Content Include="Views\Sorting\Index.cshtml" />
-    <Content Include="Views\ParkedVehicles\DeleteConfirmed.cshtml" />
     <Content Include="Views\Search\Index.cshtml" />
+    <Content Include="Views\ParkedVehicles\DeleteConfirmed.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -212,11 +220,17 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201712111459540_parkedVehicles.resx">
-      <DependentUpon>201712111459540_parkedVehicles.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201712120906049_sort.resx">
+      <DependentUpon>201712120906049_sort.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712111548427_searchj.resx">
-      <DependentUpon>201712111548427_searchj.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201712120947249_prntrcpt.resx">
+      <DependentUpon>201712120947249_prntrcpt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712121002341_prn.resx">
+      <DependentUpon>201712121002341_prn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712121010051_prntrp.resx">
+      <DependentUpon>201712121010051_prntrp.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

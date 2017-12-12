@@ -7,13 +7,13 @@ namespace GarageApp_MVC.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class searchj : IMigrationMetadata
+    public sealed partial class prntrp : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(searchj));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(prntrp));
         
         string IMigrationMetadata.Id
         {
-            get { return "201712111548427_searchj"; }
+            get { return "201712121010051_prntrp"; }
         }
         
         string IMigrationMetadata.Source

@@ -23,11 +23,10 @@ namespace GarageApp_MVC.Models.ViewModels
      
         public DateTime CheckOut { get; set; }
 
-        //[DisplayFormat(DataFormatString = "{0:C0}")]
-        //public int HourlyPrice { get; set; }
-
-        [DisplayFormat(DataFormatString ="{0:%d} day(s) {0:hh\\:mm\\:ss}")]
+        [DisplayFormat(DataFormatString = "{0:hh\\:mm\\:ss}")]
         public TimeSpan TotalTime { get; set; }
+        [DisplayFormat(DataFormatString = "{0:C0}")]
+        public double TotalPrice { get; set; }
 
 
      
@@ -48,9 +47,9 @@ namespace GarageApp_MVC.Models.ViewModels
             VehicleType = parvehicle.VehicleType.ToString();
             ParkingTime= parvehicle.ParkingTime;
             CheckOut = DateTime.Now;
-            //HourlyPrice = 40;
+            
             TotalTime= CheckOut - ParkingTime;
-            //double TotalPrice = 20*(TotalTime.TotalMinutes);
+            TotalPrice = (TotalTime.TotalMinutes)*20;
 
 
         }

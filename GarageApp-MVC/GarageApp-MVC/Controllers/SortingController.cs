@@ -15,11 +15,13 @@ namespace GarageApp_MVC.Controllers
     {
         private RegisterContext db = new RegisterContext();
 
+      
+        
         // GET: Sorting
-        public ActionResult Index(string sortOrder)
+        public ActionResult Index(string sortOrder)                                   
         {
         
-            List<ParkedVehicle> allvehicles;                                                                                                //here no neeed to create new list,then sorting will work
+            List<ParkedVehicle> allvehicles;                                                                                                                                                                                                                                                                                                                                                                                                              //here no neeed to create new list,then sorting will work
           
             switch (sortOrder)
                 {
@@ -51,18 +53,26 @@ namespace GarageApp_MVC.Controllers
                         allvehicles = db.Vehicles.OrderByDescending(a => a.SeatCapacity).ToList(); 
                         break;
                 default:
-                    allvehicles = db.Vehicles.OrderByDescending(a => a.Brand).ToList(); ;
+                    allvehicles = db.Vehicles.OrderBy(a => a.Brand).ToList(); 
                     break;
-
-
-
-
 
                 
             }
             return View(allvehicles);
         }
 
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         // GET: Sorting/Details/5
         public ActionResult Details(int? id)
         {

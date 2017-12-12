@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<GarageApp_MVC.Models.ParkedVehicle>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Search For A Vehicle";
 }
 
-<h2>Index</h2>
+<h2>Search For A Vehicle</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Park A Vehicle", "../ParkedVehicles/Create")
 </p>
 <p>
     @using (Html.BeginForm())
@@ -80,9 +80,13 @@
                 @Html.DisplayFor(modelItem => item.ParkingTime)
             </td>
             <td>
-                @Html.ActionLink("Edit", "../ParkedVehicles/Edit", new { id = item.Id }) |
-                @Html.ActionLink("Details", "../ParkedVehicles/Details", new { id = item.Id }) |
-                @Html.ActionLink("Delete", "../ParkedVehicles/Delete", new { id = item.Id })
+          
+
+
+                 @Html.ActionLink("EditVehicleDetails", "../ParkedVehicles/Edit", new { id = item.Id }) |
+                @Html.ActionLink("VehicleDetails", "../ParkedVehicles/Details", new { id = item.Id }) |
+                @Html.ActionLink("CheckOut", "../ParkedVehicles/Delete", new { id = item.Id })
+
             </td>
         </tr>
     }

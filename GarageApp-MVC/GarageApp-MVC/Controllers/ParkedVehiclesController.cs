@@ -15,7 +15,7 @@ namespace GarageApp_MVC.Controllers
     public class ParkedVehiclesController : Controller
     {
         private RegisterContext db = new RegisterContext();
-
+    
         // GET: ParkedVehicles
         public ActionResult Index()
         {
@@ -25,7 +25,7 @@ namespace GarageApp_MVC.Controllers
 
         }
 
-        public ActionResult Overview()
+        public ActionResult Overview()                                                                   //OverView 
         {
             List<Overview> model= new List<Overview>();
             foreach(var vehicle in db.Vehicles)
@@ -38,22 +38,6 @@ namespace GarageApp_MVC.Controllers
             
         }
 
-
-
-        public ActionResult PrintReceiptView(int id)
-        {
-            ParkedVehicle pv = db.Vehicles.Find(id);
-            PrintReceiptView model = new PrintReceiptView(pv);
-            model.CheckOut = DateTime.Now;
-            model.TotalTime = (model.CheckOut - pv.ParkingTime);
-            
-
-
-
-            return View();
-        }
-
-        
         // GET: ParkedVehicles/Details/5
         public ActionResult Details(int? id)
         {
@@ -140,6 +124,10 @@ namespace GarageApp_MVC.Controllers
         }
 
 
+
+
+
+
         // POST: ParkedVehicles/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
@@ -151,10 +139,16 @@ namespace GarageApp_MVC.Controllers
         
             db.Vehicles.Remove(parkedVehicle);
             db.SaveChanges();
-          return View("DeleteConfirmed",prView);
+          return View("DeleteConfirmed", prView);
           
 
         }
+
+
+
+
+
+
 
         protected override void Dispose(bool disposing)
         {

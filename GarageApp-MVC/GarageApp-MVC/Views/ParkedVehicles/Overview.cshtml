@@ -7,7 +7,7 @@
 <h2>Overview</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Park A Vehicle", "Create")
 </p>
 <table class="table">
     <tr>
@@ -41,9 +41,9 @@
             @Html.DisplayFor(modelItem => item.ParkingTime)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            @Html.ActionLink("EditVehicleDetails", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Vehicle Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("CheckOut", "Delete", new { /* id=item.PrimaryKey */ })
         </td>
     </tr>
 }

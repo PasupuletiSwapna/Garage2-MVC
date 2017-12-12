@@ -7,7 +7,7 @@
 <h2>Vehicles in a Garage</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Park A Vehicle", "Create")
  
 </p>
 <table class="table">
@@ -66,9 +66,9 @@
             @Html.DisplayFor(modelItem => item.ParkingTime)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.ActionLink("EditVehicleDetails", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("VehicleDetails", "Details", new { id=item.Id }) |
+            @Html.ActionLink("CheckOut", "Delete", new { id=item.Id })
         </td>
     </tr>
 }

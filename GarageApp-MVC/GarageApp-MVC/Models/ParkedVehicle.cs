@@ -27,7 +27,7 @@ namespace GarageApp_MVC.Models
         public ParkedVehicle()
         {
 
-            //ParkingTime = DateTime.Now;
+            ParkingTime = DateTime.Now;
 
         }
         

@@ -4,7 +4,7 @@
     ViewBag.Title = "DeleteConfirmed";
 }
 
-<h2>DeleteConfirmed</h2>
+<h2>Checked Out Successfully</h2>
 
 <div>
     <h4>PrintReceiptView</h4>
@@ -50,9 +50,17 @@
             @Html.DisplayFor(model => model.TotalTime)
         </dd>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalPrice)
+        </dd>
+
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @*@Html.ActionLink("EditVehicleDetails", "Edit", new { id = Model.ID }) |*@
     @Html.ActionLink("Back to List", "Index")
 </p>
