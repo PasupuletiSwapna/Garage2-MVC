@@ -10,6 +10,7 @@ namespace GarageApp_MVC.Models
 {
     public class ParkedVehicle
     {
+        internal DateTime CheckIn;
 
         public int Id { get; set; }
         public Type VehicleType { get; set; }

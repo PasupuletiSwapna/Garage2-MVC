@@ -10,7 +10,7 @@ namespace GarageApp_MVC.Models.ViewModels
     public class PrintReceiptView
     {
 
-        private int Price = 100;
+        private int price = 100;
 
         [DisplayName("Registration Number")]
         public string RegNum { get; set; }
@@ -22,7 +22,7 @@ namespace GarageApp_MVC.Models.ViewModels
         [DataType(DataType.Currency)]
         [DisplayFormat(DataFormatString = "{0:C0}")]
 
-        //public int Price { get; }
+        public int Price { get; }
 
         [DisplayName("Total Parking Time")]
 
