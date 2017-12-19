@@ -15,6 +15,9 @@ namespace GarageApp_MVC.Models
 
         public int Id { get; set; }
 
+
+      
+
         [Required]
         [StringLength(7, MinimumLength = 6, ErrorMessage = "Enter Proper RegNo with min 6charaters")]
         [Display(Name = "Registration Number")]
@@ -40,13 +43,12 @@ namespace GarageApp_MVC.Models
         public DateTime ParkingTime { get; set; }
         //public DateTime CheckOut { get; set; } 
 
-
-
         public int MemberId { get; set; }
         public int VehicleTypeId { get; set; }
-      //  [ForeignKey("MemberId")]
+
+        //[ForeignKey("MemberId")]
         public virtual Member Member { get; set; }
-        // [ForeignKey("VehicleTypeId")]
+        //[ForeignKey("VehicleTypeId")]
         public virtual VehicleType VehicleType { get; set; }
 
 

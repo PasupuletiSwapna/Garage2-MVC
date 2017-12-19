@@ -10,7 +10,7 @@ namespace GarageApp_MVC.Models
     public class Member
     {
         public int Id { get; set; }
-        [Required]
+        
         public int MemberId { get; set; }
         [Required]
         [RegularExpression(@"^[a-zA-Z'' ']+$", ErrorMessage = "Special characters  & Numbers should not be entered")]
@@ -19,7 +19,7 @@ namespace GarageApp_MVC.Models
        
         [Required]
         [DisplayName("Phone No")]
-        [RegularExpression(@"^[0-9'' ']+$", ErrorMessage = "Only Whole Numbers are Allowed")]
+        [RegularExpression(@"^[0-9'' ']+$", ErrorMessage = "Only Numbers are Allowed")]
         public string mobile { get; set; }
 
         public virtual ICollection<ParkedVehicle> ParkedVehicles { get; set; }

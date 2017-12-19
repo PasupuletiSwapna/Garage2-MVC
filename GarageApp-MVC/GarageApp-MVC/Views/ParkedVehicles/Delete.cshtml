@@ -1,22 +1,30 @@
 ﻿@model GarageApp_MVC.Models.ParkedVehicle
 
 @{
-    ViewBag.Title = "CheckOut";
+    ViewBag.Title = "Delete";
 }
 
-<h2>Check Out</h2>
+<h2>Delete</h2>
 
-<h3>Are you sure you want to Check Out?</h3>
+<h3>Are you sure you want to delete this?</h3>
 <div>
     <h4>ParkedVehicle</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.VehicleType)
+            @Html.DisplayNameFor(model => model.Member.OwnerName)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.VehicleType)
+            @Html.DisplayFor(model => model.Member.OwnerName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VehicleType.VType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VehicleType.VType)
         </dd>
 
         <dt>
@@ -81,7 +89,7 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="CheckOut" class="btn btn-default" /> |
+            <input type="submit" value="Delete" class="btn btn-default" /> |
             @Html.ActionLink("Back to List", "Index")
         </div>
     }

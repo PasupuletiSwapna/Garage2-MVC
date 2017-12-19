@@ -1,21 +1,29 @@
 ﻿@model GarageApp_MVC.Models.ParkedVehicle
 
 @{
-    ViewBag.Title = "DetailsOfParkedVehicle";
+    ViewBag.Title = "Details";
 }
 
-<h2>Details Of a Parked Vehicle</h2>
+<h2>Details</h2>
 
 <div>
     <h4>ParkedVehicle</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.VehicleType)
+            @Html.DisplayNameFor(model => model.Member.OwnerName)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.VehicleType)
+            @Html.DisplayFor(model => model.Member.OwnerName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VehicleType.VType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VehicleType.VType)
         </dd>
 
         <dt>
@@ -77,6 +85,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("EditVehicleDetails", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

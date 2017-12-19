@@ -8,35 +8,19 @@ using System.Web;
 using System.Web.Mvc;
 using GarageApp_MVC.DataAccessLayer;
 using GarageApp_MVC.Models;
-using GarageApp_MVC.Models.ViewModels;
 
 namespace GarageApp_MVC.Controllers
 {
     public class ParkedVehiclesController : Controller
     {
         private RegisterContext db = new RegisterContext();
-    
+
         // GET: ParkedVehicles
         public ActionResult Index()
         {
-           
-            return View(db.Vehicles.ToList());
-
-
+            var vehicles = db.Vehicles.Include(p => p.Member).Include(p => p.VehicleType);
+            return View(vehicles.ToList());
         }
-
-        //public ActionResult Overview()                                                                   //OverView 
-        //{
-        //    List<Overview> model= new List<Overview>();
-        //    foreach(var vehicle in db.Vehicles)
-        //    {
-        //        model.Add(new Overview(vehicle));
-
-        //    }
-
-        //    return View(model);
-            
-        //}
 
         // GET: ParkedVehicles/Details/5
         public ActionResult Details(int? id)
@@ -56,6 +40,8 @@ namespace GarageApp_MVC.Controllers
         // GET: ParkedVehicles/Create
         public ActionResult Create()
         {
+            ViewBag.MemberId = new SelectList(db.Members, "Id", "OwnerName");
+            ViewBag.VehicleTypeId = new SelectList(db.Vehicletypes, "Id", "VType");
             return View();
         }
 
@@ -64,7 +50,7 @@ namespace GarageApp_MVC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,VehicleType,RegNum,Color,Brand,Model,NoOfWheels,SeatCapacity,ParkingTime")] ParkedVehicle parkedVehicle)
+        public ActionResult Create([Bind(Include = "Id,RegNum,Color,Brand,Model,NoOfWheels,SeatCapacity,ParkingTime,MemberId,VehicleTypeId")] ParkedVehicle parkedVehicle)
         {
             if (ModelState.IsValid)
             {
@@ -73,6 +59,8 @@ namespace GarageApp_MVC.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.MemberId = new SelectList(db.Members, "Id", "OwnerName", parkedVehicle.MemberId);
+            ViewBag.VehicleTypeId = new SelectList(db.Vehicletypes, "Id", "VType", parkedVehicle.VehicleTypeId);
             return View(parkedVehicle);
         }
 
@@ -88,6 +76,8 @@ namespace GarageApp_MVC.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.MemberId = new SelectList(db.Members, "Id", "OwnerName", parkedVehicle.MemberId);
+            ViewBag.VehicleTypeId = new SelectList(db.Vehicletypes, "Id", "VType", parkedVehicle.VehicleTypeId);
             return View(parkedVehicle);
         }
 
@@ -96,7 +86,7 @@ namespace GarageApp_MVC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,VehicleType,RegNum,Color,Brand,Model,NoOfWheels,SeatCapacity,ParkingTime")] ParkedVehicle parkedVehicle)
+        public ActionResult Edit([Bind(Include = "Id,RegNum,Color,Brand,Model,NoOfWheels,SeatCapacity,ParkingTime,MemberId,VehicleTypeId")] ParkedVehicle parkedVehicle)
         {
             if (ModelState.IsValid)
             {
@@ -104,6 +94,8 @@ namespace GarageApp_MVC.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.MemberId = new SelectList(db.Members, "Id", "OwnerName", parkedVehicle.MemberId);
+            ViewBag.VehicleTypeId = new SelectList(db.Vehicletypes, "Id", "VType", parkedVehicle.VehicleTypeId);
             return View(parkedVehicle);
         }
 
@@ -117,38 +109,21 @@ namespace GarageApp_MVC.Controllers
             ParkedVehicle parkedVehicle = db.Vehicles.Find(id);
             if (parkedVehicle == null)
             {
-                ViewBag.Id = id;
-                return View("Already CheckedOut!..");
+                return HttpNotFound();
             }
             return View(parkedVehicle);
         }
-
-
-
-
-
 
         // POST: ParkedVehicles/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-          
             ParkedVehicle parkedVehicle = db.Vehicles.Find(id);
-            PrintReceiptView prView = new PrintReceiptView(parkedVehicle);
-        
             db.Vehicles.Remove(parkedVehicle);
             db.SaveChanges();
-          return View("DeleteConfirmed", prView);
-          
-
+            return RedirectToAction("Index");
         }
-
-
-
-
-
-
 
         protected override void Dispose(bool disposing)
         {

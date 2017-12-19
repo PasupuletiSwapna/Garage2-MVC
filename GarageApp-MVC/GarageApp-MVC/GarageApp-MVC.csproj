@@ -129,6 +129,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MembersController.cs" />
     <Compile Include="Controllers\ParkedVehiclesController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\SortingController.cs" />
@@ -136,6 +137,19 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712191437460_init.cs" />
+    <Compile Include="Migrations\201712191437460_init.Designer.cs">
+      <DependentUpon>201712191437460_init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712191504046_init2.cs" />
+    <Compile Include="Migrations\201712191504046_init2.Designer.cs">
+      <DependentUpon>201712191504046_init2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712191514268_addedvehitype.cs" />
+    <Compile Include="Migrations\201712191514268_addedvehitype.Designer.cs">
+      <DependentUpon>201712191514268_addedvehitype.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Member.cs" />
     <Compile Include="Models\ParkedVehicle.cs" />
     <Compile Include="Models\VehicleType.cs" />
@@ -183,15 +197,18 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Sorting\Index.cshtml" />
+    <Content Include="Views\Search\Index.cshtml" />
     <Content Include="Views\ParkedVehicles\Create.cshtml" />
     <Content Include="Views\ParkedVehicles\Delete.cshtml" />
     <Content Include="Views\ParkedVehicles\Details.cshtml" />
     <Content Include="Views\ParkedVehicles\Edit.cshtml" />
     <Content Include="Views\ParkedVehicles\Index.cshtml" />
-    <Content Include="Views\ParkedVehicles\Overview.cshtml" />
-    <Content Include="Views\Sorting\Index.cshtml" />
-    <Content Include="Views\Search\Index.cshtml" />
-    <Content Include="Views\ParkedVehicles\DeleteConfirmed.cshtml" />
+    <Content Include="Views\Members\Create.cshtml" />
+    <Content Include="Views\Members\Delete.cshtml" />
+    <Content Include="Views\Members\Details.cshtml" />
+    <Content Include="Views\Members\Edit.cshtml" />
+    <Content Include="Views\Members\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -203,6 +220,17 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201712191437460_init.resx">
+      <DependentUpon>201712191437460_init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712191504046_init2.resx">
+      <DependentUpon>201712191504046_init2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712191514268_addedvehitype.resx">
+      <DependentUpon>201712191514268_addedvehitype.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

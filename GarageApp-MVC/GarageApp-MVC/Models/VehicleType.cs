@@ -9,7 +9,8 @@ namespace GarageApp_MVC.Models
     public class VehicleType
     {
        // [Key]
-        public int VehicleTypeId { get; set; }
+        public int Id { get; set; }
+
         public string VType { get; set; }
 
         public virtual ICollection<ParkedVehicle> Parkedvehicles { get; set; }
