@@ -8,11 +8,13 @@ namespace GarageApp_MVC.DataAccessLayer
 {
     public class RegisterContext:DbContext
     {
-        public RegisterContext():base("Garage-2")
+        public RegisterContext():base("Garage-2.5")
         { }
 
         public DbSet<Models.ParkedVehicle> Vehicles { get; set; }
+        public DbSet<Models.VehicleType> Vehicletypes { get; set; }
+        public DbSet<Models.Member> Members { get; set; }
 
-        public System.Data.Entity.DbSet<GarageApp_MVC.Models.ViewModels.PrintReceiptView> PrintReceiptViews { get; set; }
+        //public System.Data.Entity.DbSet<GarageApp_MVC.Models.ViewModels.PrintReceiptView> PrintReceiptViews { get; set; }
     }
 }

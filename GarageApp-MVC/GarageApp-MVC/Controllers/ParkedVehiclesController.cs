@@ -25,18 +25,18 @@ namespace GarageApp_MVC.Controllers
 
         }
 
-        public ActionResult Overview()                                                                   //OverView 
-        {
-            List<Overview> model= new List<Overview>();
-            foreach(var vehicle in db.Vehicles)
-            {
-                model.Add(new Overview(vehicle));
+        //public ActionResult Overview()                                                                   //OverView 
+        //{
+        //    List<Overview> model= new List<Overview>();
+        //    foreach(var vehicle in db.Vehicles)
+        //    {
+        //        model.Add(new Overview(vehicle));
 
-            }
+        //    }
 
-            return View(model);
+        //    return View(model);
             
-        }
+        //}
 
         // GET: ParkedVehicles/Details/5
         public ActionResult Details(int? id)
