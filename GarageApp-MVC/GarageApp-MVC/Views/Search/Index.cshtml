@@ -1,94 +1,51 @@
-﻿@model IEnumerable<GarageApp_MVC.Models.ParkedVehicle>
+﻿@model IEnumerable<GarageApp_MVC.Models.ViewModels.Overview>
 
 @{
-    ViewBag.Title = "Search For A Vehicle";
+    ViewBag.Title = "Index";
 }
 
-<h2>Search For A Vehicle</h2>
+<h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Park A Vehicle", "../ParkedVehicles/Create")
+    @Html.ActionLink("Create New", "Create")
 </p>
-<p>
-    @using (Html.BeginForm())
-    {
-
-        <div>
-
-            Enter Registration Number: @Html.TextBox("SearchStrng", null, new { @class = "form-control" })        @*After creating Search controoler,This part is done for search method*@
-            Enter Model:@Html.TextBox("SearchMod", null, new { @class = "form-control" })
-        </div>
-        <div>
-            <input type="submit" value="Search">
-        </div>
-    }
-</p>
-<br />
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.VehicleType)
+            @Html.DisplayNameFor(model => model.OwnerName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VType)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.RegNum)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Color)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Brand)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Model)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NoOfWheels)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SeatCapacity)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.ParkingTime)
         </th>
+        <th></th>
     </tr>
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.VehicleType)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.RegNum)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Color)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Brand)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Model)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NoOfWheels)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SeatCapacity)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ParkingTime)
-            </td>
-            <td>
-          
-
-
-                 @Html.ActionLink("EditVehicleDetails", "../ParkedVehicles/Edit", new { id = item.Id }) |
-                @Html.ActionLink("VehicleDetails", "../ParkedVehicles/Details", new { id = item.Id }) |
-                @Html.ActionLink("CheckOut", "../ParkedVehicles/Delete", new { id = item.Id })
-
-            </td>
-        </tr>
-    }
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.OwnerName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RegNum)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ParkingTime)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
 
 </table>
