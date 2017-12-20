@@ -15,6 +15,7 @@ namespace GarageApp_MVC.DataAccessLayer
         public DbSet<Models.VehicleType> Vehicletypes { get; set; }
         public DbSet<Models.Member> Members { get; set; }
 
-        public System.Data.Entity.DbSet<GarageApp_MVC.Models.ViewModels.PrintReceiptView> PrintReceiptViews { get; set; }
+       
+        public DbSet<GarageApp_MVC.Models.ViewModels.PrintReceiptView> PrintReceiptViews { get; set; }
     }
 }

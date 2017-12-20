@@ -50,9 +50,9 @@
         <th>
             @Html.DisplayNameFor(model => model.SeatCapacity)
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.ParkingTime)
-        </th>
+        </th>*@
         <th></th>
     </tr>
 
@@ -82,9 +82,9 @@
         <td>
             @Html.DisplayFor(modelItem => item.SeatCapacity)
         </td>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.ParkingTime)
-        </td>
+        </td>*@
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
             @Html.ActionLink("Details", "Details", new { id=item.Id }) |

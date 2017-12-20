@@ -45,10 +45,20 @@ namespace GarageApp_MVC.Controllers
 
 
 
-        public ActionResult OverViewIndex(string searchOver)
+        public ActionResult OverViewIndex()
         {
-
-            return View();
+            var pvehicles = db.Vehicles;
+            List<Overview> model = new List<Overview>();
+            foreach(ParkedVehicle p in pvehicles)
+            {
+                Overview ov = new Overview();
+                ov.OwnerName = p.Member.OwnerName;
+                ov.VType = p.VehicleType.VType;
+                ov.RegNum = p.RegNum;
+                ov.ParkingTime = p.ParkingTime;
+                model.Add(ov);
+            }
+            return View(model.OrderByDescending(p=>p.RegNum));
         }
 
         // GET: ParkedVehicles/Details/5
@@ -83,6 +93,7 @@ namespace GarageApp_MVC.Controllers
         {
             if (ModelState.IsValid)
             {
+                parkedVehicle.ParkingTime = DateTime.Now;
                 db.Vehicles.Add(parkedVehicle);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -149,10 +160,11 @@ namespace GarageApp_MVC.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             ParkedVehicle parkedVehicle = db.Vehicles.Find(id);
-            PrintReceiptView pRV = new PrintReceiptView(parkedVehicle);
+            var pv = new PrintReceiptView(parkedVehicle);
+          
             db.Vehicles.Remove(parkedVehicle);
             db.SaveChanges();
-            return RedirectToAction("DeleteConfirmed",pRV);
+            return View("DeleteConfirmed",pv);
         }
 
         protected override void Dispose(bool disposing)

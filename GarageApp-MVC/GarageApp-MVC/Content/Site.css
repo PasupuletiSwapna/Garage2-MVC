@@ -1,9 +1,10 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    text-align: center;
     /*background-repeat: no-repeat;*/
-    background-image: url('../Images/Parking1.jpg');
-    background-size: cover;
+    /*background-image: url('../Images/8589130455908-2013-dodge-viper-srt-coupe-garage-wallpaper-hd.jpg');*/
+    /*background-size: cover;*/
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -11,12 +12,16 @@
     padding-left: 15px;
     padding-right: 15px;
     
-    background-color:turquoise;
+    /*background-color:cornflowerblue;*/
     opacity: 0.7;
 }
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
 .dl-horizontal dt {
     white-space: normal;
 }
+/* Set width on the form input elements since they're 100% wide by default */
 input,
 select,
 textarea {
@@ -24,14 +29,15 @@ textarea {
 }
 
 .main-header {
-    padding: 30px 0px 30px 0px;
+    padding: 50px 0px 50px 0px;
     /*font-weight: 600;*/
-    font-size: 58px;
+    font-size: 40px;
     font-family: beamweapon;
     text-align: center;
-    color: black;
-    background-image: url('../Images/traingle.jpg');
-    margin-bottom: 40px;
+    color:ghostwhite;
+    background-image: url('../Images/Parking1.jpg');
+    /*margin-bottom:200px;*/
+    /*height:400px;*/
 }
     /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 

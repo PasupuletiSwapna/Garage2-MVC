@@ -137,13 +137,21 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201712201037020_init.cs" />
-    <Compile Include="Migrations\201712201037020_init.Designer.cs">
-      <DependentUpon>201712201037020_init.cs</DependentUpon>
+    <Compile Include="Migrations\201712201823253_init.cs" />
+    <Compile Include="Migrations\201712201823253_init.Designer.cs">
+      <DependentUpon>201712201823253_init.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201712201525295_init2.cs" />
-    <Compile Include="Migrations\201712201525295_init2.Designer.cs">
-      <DependentUpon>201712201525295_init2.cs</DependentUpon>
+    <Compile Include="Migrations\201712201853220_init1.cs" />
+    <Compile Include="Migrations\201712201853220_init1.Designer.cs">
+      <DependentUpon>201712201853220_init1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712202015018_recpt.cs" />
+    <Compile Include="Migrations\201712202015018_recpt.Designer.cs">
+      <DependentUpon>201712202015018_recpt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712202046415_init3.cs" />
+    <Compile Include="Migrations\201712202046415_init3.Designer.cs">
+      <DependentUpon>201712202046415_init3.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Member.cs" />
@@ -160,10 +168,15 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\8589130455908-2013-dodge-viper-srt-coupe-garage-wallpaper-hd.jpg" />
     <Content Include="Images\autos.jpg" />
+    <Content Include="Images\Cars-Japanese-Honda-Red-Garage-Sport-Speed-Racer-Desktop.jpg" />
     <Content Include="Images\empty.jpg" />
     <Content Include="Images\lightcolor.jpg" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\P3.jpg" />
     <Content Include="Images\Parking1.jpg" />
+    <Content Include="Images\plain.jpg" />
     <Content Include="Images\traingle.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -204,6 +217,8 @@
     <Content Include="Views\ParkedVehicles\Details.cshtml" />
     <Content Include="Views\ParkedVehicles\Edit.cshtml" />
     <Content Include="Views\ParkedVehicles\Index.cshtml" />
+    <Content Include="Views\ParkedVehicles\OverViewIndex.cshtml" />
+    <Content Include="Views\ParkedVehicles\DeleteConfirmed.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -217,11 +232,17 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201712201037020_init.resx">
-      <DependentUpon>201712201037020_init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201712201823253_init.resx">
+      <DependentUpon>201712201823253_init.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712201525295_init2.resx">
-      <DependentUpon>201712201525295_init2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201712201853220_init1.resx">
+      <DependentUpon>201712201853220_init1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712202015018_recpt.resx">
+      <DependentUpon>201712202015018_recpt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712202046415_init3.resx">
+      <DependentUpon>201712202046415_init3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

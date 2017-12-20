@@ -23,7 +23,7 @@ namespace GarageApp_MVC.Models.ViewModels
         public string RegNum { get; set; }
 
 
-        public string VehicleType { get; set; }
+        public string VType { get; set; }
         [DisplayName("CheckIn")]
         public DateTime ParkingTime { get; set; }
 
@@ -52,7 +52,7 @@ namespace GarageApp_MVC.Models.ViewModels
             OwnerName = parvehicle.Member.OwnerName;
         RegNum = parvehicle.RegNum;
   
-        VehicleType = parvehicle.VehicleType.ToString();
+        VType = parvehicle.VehicleType.VType;
         ParkingTime = parvehicle.ParkingTime;
         CheckOut = DateTime.Now;
 

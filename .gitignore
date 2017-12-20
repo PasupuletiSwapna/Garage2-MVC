@@ -286,3 +286,14 @@ __pycache__/
 *.btm.cs
 *.odx.cs
 *.xsd.cs
+/GarageApp-MVC/GarageApp-MVC/Migrations/201712201823253_init.Designer.cs
+/GarageApp-MVC/GarageApp-MVC/Migrations/201712201823253_init.cs
+/GarageApp-MVC/GarageApp-MVC/Migrations/201712201853220_init1.cs
+/GarageApp-MVC/GarageApp-MVC/Migrations/201712201853220_init1.Designer.cs
+/GarageApp-MVC/GarageApp-MVC/Migrations/201712202015018_recpt.cs
+/GarageApp-MVC/GarageApp-MVC/Migrations/201712202046415_init3.cs
+/GarageApp-MVC/GarageApp-MVC/Migrations/201712202015018_recpt.resx
+/GarageApp-MVC/GarageApp-MVC/Migrations/201712202046415_init3.Designer.cs
+/GarageApp-MVC/GarageApp-MVC/Migrations/201712202046415_init3.resx
+/GarageApp-MVC/GarageApp-MVC/Migrations/201712201853220_init1.resx
+/GarageApp-MVC/GarageApp-MVC/Migrations/201712201823253_init.resx
