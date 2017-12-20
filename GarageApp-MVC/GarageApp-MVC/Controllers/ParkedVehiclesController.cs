@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using GarageApp_MVC.DataAccessLayer;
 using GarageApp_MVC.Models;
+using GarageApp_MVC.Models.ViewModels;
 
 namespace GarageApp_MVC.Controllers
 {
@@ -16,10 +17,38 @@ namespace GarageApp_MVC.Controllers
         private RegisterContext db = new RegisterContext();
 
         // GET: ParkedVehicles
-        public ActionResult Index()
+        public ActionResult Index(string searchBy, string search)
         {
-            var vehicles = db.Vehicles.Include(p => p.Member).Include(p => p.VehicleType);
-            return View(vehicles.ToList());
+            //var vehicles = db.Vehicles.Include(p => p.Member).Include(p => p.VehicleType);
+            //var vehis = db.Vehicles.Include(v => v.RegNum).Include(v => v.VehicleType);
+            var vehicls = from s in db.Vehicles select s;
+            //if (!string.IsNullOrEmpty(Searchstring))
+            //{
+            //    vehicls = vehicls.Where(s => s.RegNum.Contains(Searchstring) || s.VehicleType.VType.Contains(Searchstring));
+
+            //}
+
+            if (searchBy == "RegNum")
+            {
+                vehicls = vehicls.Where(x => x.RegNum == search || search == null);
+            }
+            else if (searchBy == "VType")
+            {
+                vehicls = vehicls.Where(x => x.VehicleType.VType == search || search == null);
+            }
+            else
+            {
+                vehicls = vehicls.Where(x => x.RegNum.StartsWith(search) || search == null);
+            }
+            return View(vehicls);
+        }
+
+
+
+        public ActionResult OverViewIndex(string searchOver)
+        {
+
+            return View();
         }
 
         // GET: ParkedVehicles/Details/5
@@ -120,9 +149,10 @@ namespace GarageApp_MVC.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             ParkedVehicle parkedVehicle = db.Vehicles.Find(id);
+            PrintReceiptView pRV = new PrintReceiptView(parkedVehicle);
             db.Vehicles.Remove(parkedVehicle);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("DeleteConfirmed",pRV);
         }
 
         protected override void Dispose(bool disposing)

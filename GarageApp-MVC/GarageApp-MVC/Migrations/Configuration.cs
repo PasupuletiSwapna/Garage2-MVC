@@ -16,13 +16,12 @@ namespace GarageApp_MVC.Migrations
         protected override void Seed(GarageApp_MVC.DataAccessLayer.RegisterContext context)
         {
             context.Vehicletypes.AddOrUpdate(v => v.VType,
-                new VehicleType() { VType = "Auto" },
-                new VehicleType() { VType = "Bus" },
-                new VehicleType() { VType = "Bike" },
-                new VehicleType() { VType = "Car" },
-                new VehicleType() { VType = "Truck" }
-                );
-
+                 new VehicleType() { VType = "Auto" },
+                 new VehicleType() { VType = "Bus" },
+                 new VehicleType() { VType = "Bike" },
+                 new VehicleType() { VType = "Car" },
+                 new VehicleType() { VType = "Truck" }
+                 );
         }
     }
 }
