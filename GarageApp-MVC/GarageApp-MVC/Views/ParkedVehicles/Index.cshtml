@@ -4,10 +4,10 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Parked Vehicles</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Park A Car", "Create")
 </p>
 @using (Html.BeginForm())
 {
@@ -86,9 +86,9 @@
             @Html.DisplayFor(modelItem => item.ParkingTime)
         </td>*@
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |~|
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |~|
+            @Html.ActionLink("UnPark", "Delete", new { id=item.Id })
         </td>
     </tr>
 }

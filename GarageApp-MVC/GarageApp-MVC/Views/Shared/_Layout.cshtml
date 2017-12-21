@@ -12,7 +12,7 @@
 
 <body>
     @*<img src="~/Images/empty.jpg" / alignment="center" width="1000px" height="300px">*@
-    <div class="main-header">WELCOME TO PARKINN GARAGE2</div>
+    <div class="main-header" style="font-family:Verdana;font-size:72px;">WELCOME TO PARKINN GARAGE2</div>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -28,11 +28,11 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("ParkedVehicles", "", "ParkedVehicles")</li>
-                    <li>@Html.ActionLink("Overview", "Overview", "ParkedVehicles")</li>
-                    <li>@Html.ActionLink("MemberRegister", "Index", "Members")</li>
+                    <li>@Html.ActionLink("VehiclesDetails", "", "ParkedVehicles")</li>
+                    <li>@Html.ActionLink("ParkedVehicles", "OverviewIndex", "ParkedVehicles")</li>
+                    <li>@Html.ActionLink("MemberRegistry", "Index", "Members")</li>
                     @*<li>@Html.ActionLink("Register New Member", "Create", "Members")</li>*@
-                    <li>@Html.ActionLink("Search","","Search")</li>
+                    @*<li>@Html.ActionLink("SearchForaVehicle","","Search")</li>*@
                     @*<li>@Html.ActionLink("Sorting","","Sorting")</li>*@
 
 
